@@ -1,10 +1,11 @@
 # Operational Machine Learning With Bank Marketing Dataset
 
-This project is part of the Udacity Azure ML Nanodegree. In this project, our goal is determine the next set of potential customers to which to market. 
-The project involves working with the [Bank Marketing Dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). To accomplish this task we are we are building a model then create consumable pipelines. It includes model creation using Azure ML Studio, deploying it and then consuming the model through its API endpoints. Apart from that, it also includes creating a fully operational Machine Learning pipeline, publishing it as well as consuming it using Azure Python SDK.
+This project is part of the Udacity Azure ML Nanodegree. In this project, our goal is to determine the next set of potential customers to which to market. 
+The project involves working with the [Bank Marketing Dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). To accomplish this task we are building a model then create consumable pipelines. It includes using Azure AutoML to select best model and most suitable data pre-processing steps, deploying it and then consuming the model through its API endpoints. The project also includes creating a fully operational Machine Learning pipeline, publishing it as well as consuming it using Azure Python SDK.
 
 ## Architectural Diagram
-The architecural diagram explains the flow of the project in a pictorial represenation. We start with installing the Azure az command line tool and create service principles(if we have our own subscription). We then create an Azure AutoML model using ML Studio and deploy the best model from the run. After enabling authentication, we enable Application Insights to maintain the logs of our model. We then use swagger to document model API structure, and thereafter consume the endpoints. We can also use Apache Benchmark tool for benchmarking the response, though it is not mandatory. Lastly, we publish a ML Pipeline using Azure Python SDK. 
+The architecural diagram explains the flow of the project in a pictorial represenation. We start with creating the Bankmarketing dataset from a CSV file. We then create an Azure AutoML model using ML Studio and deploy the best model from the run. After enabling authentication, we enable Application Insights to maintain the logs of our model. We then use swagger to document model API structure, and thereafter consume the endpoints. We can also use Apache Benchmark tool for benchmarking the response, though it is not mandatory. Lastly, we publish a ML Pipeline using Azure Python SDK. 
+![alt text](https://github.com/aulukelvin/nd00333_AZMLND_C2/blob/master/UdacityMLOperationalED.jpg)
 
 
 ## Key Steps
@@ -19,7 +20,7 @@ Then, using Azure AutoML service, create an AutoML model that has to be deployed
 <br></br>
 
 #### 3. VotingEnsembleClassifier is the best model.<br></br>
-Select the best model on the data, which is usually the topmost and analyze the insights. Deploy this model and download the config.json file.
+Select the best model on the data, which is usually the topmost and analyze the insights. In our case, the best perfoming model is is VotingEnsemble model, which as the name suggested, is a second level model built on top of other simpler models. Deploy this model and download the config.json file.
 
 #### 4. Run the logs.py script to observe the logs.<br></br>
 Write the code to enable application insights in the logs.py file and run the file. Observe the logs it provides of the deployed model.
@@ -73,7 +74,3 @@ The pipeline runs have been completed.
 
 ## Screen Recording
 Click [here]() to see the ScreenCast.
-
-## Scope of improvement:
-Providing the option of enabling deep learning during AutoML model creation would prove beneficial in terms of results and learning. Cross-comparing the models on factors like scoring metric, computational complexity, running time can also be added. 
-More focus can be given on benchmarking content and different tools can also be compared.
