@@ -19,8 +19,9 @@ Then, using Azure AutoML service, create an AutoML model that has to be deployed
 ![alt text](https://github.com/aulukelvin/nd00333_AZMLND_C2/blob/master/Experiment_completed.PNG)
 <br></br>
 
-#### 3. VotingEnsembleClassifier is the best model.<br></br>
-Select the best model on the data, which is usually the topmost and analyze the insights. In our case, the best perfoming model is is VotingEnsemble model, which as the name suggested, is a second level model built on top of other simpler models. Deploy this model and download the config.json file.
+#### 3. The best model chosen by AutoML.<br></br>
+After the experiment completed, AutoML will summarize the task with the best performance, in our case the accuracy, and the best model, in our case, the best perfoming model is is VotingEnsemble model. As the name suggested, VotingEnsemble model is a second level model built on top of other simpler models. It ran last and gives marginal better result than simple models.
+Deploy this model from ML Studio. Remember to choose ACL as the hosting option and choose enable authentication.
 
 #### 4. Run the logs.py script to observe the logs.<br></br>
 Write the code to enable application insights in the logs.py file and run the file. Observe the logs it provides of the deployed model.
